@@ -1,0 +1,22 @@
+name: challange_3.yml
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run script
+        run: ruby hello.rb
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Create artifact
+        uses: artifacts/upload-artifact@v2
+        with:
+          name: 'bruh'
+          path: .
