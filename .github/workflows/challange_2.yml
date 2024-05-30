@@ -12,7 +12,7 @@ jobs:
           FILENAME: 'my_custom_filename'
 
       - name: Upload artifact
-        uses: actions/upload-arifact@v1.0.0
+        uses: actions/upload-artifact@v1.0.0
         with:
           name: linux
           path: ./${{ env.FILENAME }}
