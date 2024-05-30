@@ -7,9 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup variable
-        run: |
-          - actions/checkout@v2
-          - $FILENAME='my_custom_artifacts_name'
+        uses: actions/checkout@v2
+        env:
+          FILENAME: 'my_custom_filename'
+
       - name: Upload artifact
         uses: actions/upload-arifact@v1.0.0
         with:
