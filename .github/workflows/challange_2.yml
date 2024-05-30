@@ -1,18 +1,16 @@
 name: artifacts
 
 on: [push] # can also be triggered on multiple events eg. [push, pull_request]
-
+env:
+  FILENAME: 'my_custom_filename'
 jobs:
   upload_artifacts:
     runs-on: ubuntu-latest
     steps:
       - name: Setup variable
         uses: actions/checkout@v2
-        env:
-          FILENAME: 'my_custom_filename'
-
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: linux
-          path: ./${{ env.FILENAME }}
+          name: ${{ env.FILENAME }}
+          path: .
