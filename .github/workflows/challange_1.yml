@@ -2,26 +2,22 @@ name: challange
 
 on: push
 jobs:
-  job1:
-    name: First
+  First:
     runs-on: ubuntu-latest
     steps:
       - name: Print ubuntu date
         run: date
-  job2:
-    name: Second
+  Second:
     runs-on: windows-latest
     steps:
       - name: Print windows date
         run: Get-Date
-  job3:
-    name: Third
+  Third:
     runs-on: macos-latest
     steps:
       - name: Print macos date
         run: date
-  job4:
-    name: Final
+  Final:
     runs-on: ubuntu-latest
     needs: [job1, job2, job3]
     steps:
