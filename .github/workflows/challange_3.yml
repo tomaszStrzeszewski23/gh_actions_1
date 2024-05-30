@@ -1,4 +1,4 @@
-name: challange_3.yml
+name: Challange 3
 on: push
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Create artifact
-        uses: artifacts/upload-artifact@v1.0.0
+        uses: actions/upload-artifact@v1.0.0
         with:
           name: 'bruh'
           path: .
